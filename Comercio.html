@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Munguia Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="assets/img/munguia.jpg">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/munguia.jpg">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">MUNGUIA STORE</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="templatemo_main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Comercio.html">Comercio</a></li>
+                        <li class="nav-item"><a class="nav-link text-success" href="login/login.html"><i class="fa fa-user fa-lg"></i></a></li>
+                        <li class="nav-item"><a class="nav-link text-success" href="cart.html"><i class="fa fa-shopping-cart fa-lg"></i><span id="cart-count" class="badge bg-danger">0</span></a></li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text"><i class="fa fa-fw fa-search"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Iniciar contenido -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-3">
+                <h1 class="h2 pb-4">Categorías</h1>
+                <ul class="list-unstyled templatemo-accordion">
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">Género<i class="fa fa-fw fa-chevron-circle-down mt-1"></i></a>
+                        <ul class="collapse show list-unstyled pl-3">
+                            <li><a class="text-decoration-none filter-btn" href="#" data-filter="hombre">Hombre</a></li>
+                            <li><a class="text-decoration-none filter-btn" href="#" data-filter="mujer">Mujer</a></li>
+                        </ul>
+                    </li>
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">Venta<i class="fa fa-fw fa-chevron-circle-down mt-1 ms-auto"></i></a>
+                        <ul id="collapseTwo" class="collapse list-unstyled pl-3">
+                            <li><a class="text-decoration-none filter-btn" href="#" data-filter="lujo">Lujo</a></li>
+                            <li><a class="text-decoration-none filter-btn" href="#" data-filter="seguridad">Seguridad</a></li>
+                            <li><a class="text-decoration-none filter-btn" href="#" data-filter="zapatillas">Zapatillas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-inline shop-top-menu pb-3 pt-1">
+                            <li class="list-inline-item"><a class="h3 text-dark text-decoration-none mr-3 filter-btn" href="#" data-filter="todo">Todo</a></li>
+                            <li class="list-inline-item"><a class="h3 text-dark text-decoration-none mr-3 filter-btn" href="#" data-filter="hombre">Hombres</a></li>
+                            <li class="list-inline-item"><a class="h3 text-dark text-decoration-none filter-btn" href="#" data-filter="mujer">Mujeres</a></li>
+                            <li class="list-inline-item"><a class="h3 text-dark text-decoration-none filter-btn" href="#" data-filter="zapatillas">Zapatillas</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row product-list">
+                    <div class="col-md-4 product-item" data-category="lujo" data-gender="mujer" data-type="buzo">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_01.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white mt-2 add-to-cart" data-product-id="1" data-product-name="Buzo deportivo para Mujer" data-product-price="250.00" href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Buzo deportivo para Mujer</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li>M/L/X/XL</li>
+                                </ul>
+                                <p class="text-center mb-0">S/. 250.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 product-item" data-category="lujo" data-gender="hombre" data-type="buzo">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_02.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white mt-2 add-to-cart" data-product-id="2" data-product-name="Buzo deportivo para Hombre" data-product-price="350.00" href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop.html" class="h3 text-decoration-none">Buzo deportivo para Hombre</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li>M/L/X/XL</li>
+                                </ul>
+                                <p class="text-center mb-0">S/. 350.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 product-item" data-category="seguridad" data-gender="hombre" data-type="buzo">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_03.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white mt-2 add-to-cart" data-product-id="3" data-product-name="Buzo Conjunto para Hombre" data-product-price="450.00" href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Buzo Conjunto para Hombre</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li>M/L/X/XL</li>
+                                </ul>
+                                <p class="text-center mb-0">S/. 450.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 product-item" data-category="seguridad" data-gender="mujer" data-type="buzo">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_04.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white mt-2 add-to-cart" data-product-id="4" data-product-name="Buzo Conjunto para Mujer" data-product-price="300.00" href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Buzo Conjunto para Mujer</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li>M/L/X/XL</li>
+                                </ul>
+                                <p class="text-center mb-0">S/. 300.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 product-item" data-category="zapatillas" data-gender="hombre" data-type="zapatillas">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_05.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white mt-2 add-to-cart" data-product-id="5" data-product-name="Zapatillas para Hombre" data-product-price="250.00" href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Zapatillas para Hombre</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li>42/43/44</li>
+                                </ul>
+                                <p class="text-center mb-0">S/. 250.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 product-item" data-category="zapatillas" data-gender="mujer" data-type="zapatillas">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_06.jpg">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white mt-2 add-to-cart" data-product-id="6" data-product-name="Zapatillas para Mujer" data-product-price="200.00" href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none">Zapatillas para Mujer</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li>36/37/38</li>
+                                </ul>
+                                <p class="text-center mb-0">S/. 200.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repite el bloque anterior para agregar más productos -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Iniciar pie de página -->
+<footer class="bg-dark" id="tempaltemo_footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 pt-5">
+                <h2 class="h2 text-success border-bottom pb-3 border-light logo">Munguia Store</h2>
+                <ul class="list-unstyled text-light footer-link-list">
+                    <li>
+                        <i class="fas fa-map-marker-alt fa-fw"></i>
+                        Jr, Pedro Caballero y Lira N° 188, Cerro De Pasco
+                    </li>
+                    <li>
+                        <i class="fa fa-phone fa-fw"></i>
+                        <a class="text-decoration-none" href="https://wa.link/er52h8">+51 929783740</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope fa-fw"></i>
+                        <a class="text-decoration-none" href="https://mail.google.com/mail/u/0/#inbox">charles.villa.huaman@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 pt-5">
+                <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
+                <ul class="list-unstyled text-light footer-link-list">
+                    <li><a class="text-decoration-none" href="#">Lujo</a></li>
+                    <li><a class="text-decoration-none" href="#">Ropa deportiva</a></li>
+                    <li><a class="text-decoration-none" href="#">Zapatillas de hombre</a></li>
+                    <li><a class="text-decoration-none" href="#">Zapatillas de mujer</a></li>
+                    <li><a class="text-decoration-none" href="#">Zapatillas para niños</a></li>
+                    <li><a class="text-decoration-none" href="#">Casacas</a></li>
+                    <li><a class="text-decoration-none" href="#">Buzos</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 pt-5">
+                <h2 class="h2 text-light border-bottom pb-3 border-light">Desarrollador</h2>
+                <div class="d-flex align-items-center">
+                    <img src="assets/img/yo.jpeg" alt="Descripción de la imagen" class="img-fluid" style="max-width: 100px;">
+                    <p class="text-light ms-3">Desarrollador apasionado por la tecnología y la innovación. Me especializo en crear soluciones web efectivas y funcionales para mejorar la experiencia del usuario. Siempre en busca de nuevos desafíos y oportunidades para aprender y crecer profesionalmente</p>
+                </div>
+            </div>
+        </div>
+        <div class="row text-light mb-4">
+            <div class="col-12 mb-3">
+                <div class="w-100 my-3 border-top border-light"></div>
+            </div>
+            <div class="col-auto me-auto">
+                <ul class="list-inline text-left footer-icons">
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="https://www.facebook.com/charles.huam?locale=es_LA"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                    </li>
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/charles.huaman_22/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                    </li>
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="https://x.com/CharlesHuaman2"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                    </li>
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                        <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/in/charles-huaman-villano-337384297/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-auto">
+                <label class="sr-only" for="subscribeEmail">Correo Electrónico</label>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Correo Electrónico">
+                    <div class="input-group-text btn-success text-light">Suscribir</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-100 bg-black py-3">
+        <div class="container">
+            <div class="row pt-2">
+                <div class="col-12">
+                    <p class="text-left text-light">
+                        &copy; 2024 Charles HUAMAN VILLANO
+                        | No limites tus retos. Reta tus limites.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Fin de pie de página -->
+
+
+    <!-- Iniciar secuencia de comandos -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- Fin del guión -->
+</body>
+
+</html>
+
+    <!-- Enlaces a JavaScript -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let cartCount = cartItems.reduce((count, item) => count + item.quantity, 0);
+            const cartCountElement = document.getElementById('cart-count');
+
+            function updateCartCount() {
+                cartCountElement.textContent = cartCount;
+            }
+
+            document.querySelectorAll('.add-to-cart').forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const productId = this.getAttribute('data-product-id');
+                    const product = { id: productId, name: this.dataset.productName, price: parseFloat(this.dataset.productPrice), quantity: 1 };
+
+                    const existingProductIndex = cartItems.findIndex(item => item.id === productId);
+                    if (existingProductIndex >= 0) {
+                        cartItems[existingProductIndex].quantity++;
+                    } else {
+                        cartItems.push(product);
+                    }
+
+                    cartCount++;
+                    updateCartCount();
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                });
+            });
+
+            document.querySelectorAll('.filter-btn').forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const filter = this.getAttribute('data-filter');
+                    document.querySelectorAll('.product-item').forEach(function(item) {
+                        if (filter === 'todo' || item.getAttribute('data-category') === filter || item.getAttribute('data-gender') === filter || item.getAttribute('data-type') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>

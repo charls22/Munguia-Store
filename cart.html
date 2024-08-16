@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Carrito de Compras</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+        .table th {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        .table td {
+            background-color: #f8f9fa;
+        }
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+        .modal-header {
+            background-color: #007bff;
+            color: #ffffff;
+            border-bottom: none;
+        }
+        .modal-footer {
+            border-top: none;
+        }
+        #yape-payment img {
+            width: 200px;
+            height: 200px;
+        }
+        #checkout-button {
+            font-size: 1.25rem;
+        }
+        h1 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Encabezado -->
+<nav class="navbar navbar-expand-lg navbar-light shadow">
+    <div class="container d-flex justify-content-between align-items-center">
+
+        <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+            MUNGUIA STORE
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+            <div class="flex-fill">
+                <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Comercio.html">Comercio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="login/login.html">
+                            <i class="fa fa-user fa-lg"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="Tienda.html">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                            <span id="cart-count" class="badge bg-danger">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar align-self-center d-flex">
+                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                        <div class="input-group-text">
+                            <i class="fa fa-fw fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Cerrar encabezado -->
+
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Carrito de Compras</h1>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Items del carrito se añadirán aquí -->
+            </tbody>
+        </table>
+        <div class="text-right mb-4">
+            <h3>Total: S/. <span id="cart-total">0.00</span></h3>
+        </div>
+        <button class="btn btn-success btn-lg btn-block" id="checkout-button">Pagar</button>
+    </div>
+    
+    <!-- Modal de Pago -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Método de Pago</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="payment-form">
+                        <div class="form-group">
+                            <label for="payment-method">Selecciona un método de pago</label>
+                            <select class="form-control" id="payment-method" required>
+                                <option value="card">Tarjeta</option>
+                                <option value="yape">Yape</option>
+                            </select>
+                        </div>
+                        <div id="card-payment" style="display: none;">
+                            <div class="form-group">
+                                <label for="card-number">Número de Tarjeta</label>
+                                <input type="text" class="form-control" id="card-number">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-expiry">Fecha de Expiración</label>
+                                <input type="text" class="form-control" id="card-expiry">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-cvc">CVC</label>
+                                <input type="text" class="form-control" id="card-cvc">
+                            </div>
+                        </div>
+                        <div id="yape-payment" style="display: none; text-align: center;">
+                            <p>Escanea el código QR con Yape para realizar el pago.</p>
+                            <img src="assets/img/yape.jpeg" alt="Código QR de Yape">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Pagar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            function updateCartDisplay() {
+                const cartItemsContainer = document.getElementById('cart-items');
+                const cartTotalElement = document.getElementById('cart-total');
+                cartItemsContainer.innerHTML = '';
+                let total = 0;
+
+                cartItems.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.name}</td>
+                        <td>S/. ${item.price.toFixed(2)}</td>
+                        <td><input type="number" class="form-control" value="${item.quantity}" min="1" data-index="${index}"></td>
+                        <td>S/. ${itemTotal.toFixed(2)}</td>
+                        <td><button class="btn btn-danger btn-sm" data-index="${index}">Eliminar</button></td>
+                    `;
+                    cartItemsContainer.appendChild(row);
+                });
+
+                cartTotalElement.textContent = total.toFixed(2);
+
+                document.querySelectorAll('.btn-danger').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = this.getAttribute('data-index');
+                        cartItems.splice(index, 1);
+                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                        updateCartDisplay();
+                    });
+                });
+
+                document.querySelectorAll('input[type="number"]').forEach(input => {
+                    input.addEventListener('change', function() {
+                        const index = this.getAttribute('data-index');
+                        const newQuantity = parseInt(this.value);
+                        cartItems[index].quantity = newQuantity;
+                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                        updateCartDisplay();
+                    });
+                });
+            }
+
+            document.getElementById('checkout-button').addEventListener('click', function() {
+                $('#paymentModal').modal('show');
+            });
+
+            document.getElementById('payment-method').addEventListener('change', function() {
+                const method = this.value;
+                document.getElementById('card-payment').style.display = method === 'card' ? 'block' : 'none';
+                document.getElementById('yape-payment').style.display = method === 'yape' ? 'block' : 'none';
+            });
+
+            document.getElementById('payment-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const method = document.getElementById('payment-method').value;
+                if (method === 'card') {
+                    // Aquí puedes añadir la lógica para procesar el pago con tarjeta.
+                    alert('Pago con tarjeta realizado con éxito!');
+                } else if (method === 'yape') {
+                    // Aquí puedes añadir la lógica para procesar el pago con Yape.
+                    alert('Pago con Yape realizado con éxito!');
+                }
+                $('#paymentModal').modal('hide');
+                cartItems = [];
+                localStorage.removeItem('cartItems');
+                updateCartDisplay();
+            });
+
+            updateCartDisplay();
+        });
+    </script>
+</body>
+</html>
